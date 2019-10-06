@@ -138,7 +138,7 @@ install_v2ray(){
     bash <(curl -L -s https://install.direct/go.sh)  
     cd /etc/v2ray/
     rm -f config.json
-    wget https://raw.githubusercontent.com/atrandys/v2ray-ws-tls/master/config.json
+    wget https://raw.githubusercontent.com/local14/v2ray-ws-tls/master/config.json
     v2uuid=$(cat /proc/sys/kernel/random/uuid)
     sed -i "s/aaaa/$v2uuid/;" config.json
     newpath=$(cat /dev/urandom | head -1 | md5sum | head -c 4)
@@ -146,7 +146,7 @@ install_v2ray(){
     sed -i "s/mypath/$newpath/;" /etc/nginx/conf.d/default.conf
     cd /etc/nginx/html
     rm -f /etc/nginx/html/*
-    wget https://github.com/atrandys/v2ray-ws-tls/raw/master/web.zip
+    wget https://github.com/local14/v2ray-ws-tls/raw/master/web.zip
     unzip web.zip
     /etc/nginx/sbin/nginx -s stop
     /etc/nginx/sbin/nginx
@@ -214,14 +214,12 @@ remove_v2ray(){
 start_menu(){
     clear
     green " ===================================="
-    green " 介绍：一键安装v2ray+ws+tls           "
+    green " 介绍：一键安装v2ray+h2+tls           "
     green " 系统：centos7                       "
-    green " 作者：atrandys                      "
-    green " 网站：www.atrandys.com              "
-    green " Youtube：atrandys                   "
+    green " 作者：local14                       "
     green " ===================================="
     echo
-    green " 1. 安装v2ray+ws+tls"
+    green " 1. 安装v2ray+h2+tls"
     green " 2. 升级v2ray"
     red " 3. 卸载v2ray"
     yellow " 0. 退出脚本"
