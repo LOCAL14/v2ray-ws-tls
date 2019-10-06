@@ -20,9 +20,9 @@
     },
      "streamSettings": {
       "network": "h2",
-      "wsSettings": {
-     	 "path": "/mypath"
-    	}
+      "httpSettings": { 
+          "path": "/mypath"
+        }
      }
   },
   "outbound": {
